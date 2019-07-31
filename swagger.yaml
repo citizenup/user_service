@@ -1,0 +1,44 @@
+openapi: 3.0.0
+
+info:
+  title: CitizenUp User Service
+  description: Microservice for handling all things user in CitizenUp
+  version: v0.1
+  contact:
+    name: CitizenUp Developers
+    email: dev@citizenup.app
+
+servers:
+  - url: user-service.citizenup.local
+    description: Internal microservice
+tags:
+  - name: models
+    description: Actions taken on users
+  - name: actions
+    description: RPC type actions
+paths:
+  /users:
+    get:
+      tags:
+      - models
+      summary: Fetch list of users
+      responses:
+        200:
+          description: Fetch Successful
+    post:
+      tags:
+      - models
+      summary: Register User
+      responses:
+        201:
+          description: "Creation succcessful"
+  '/users/{userId}':
+    get:
+      tags:
+      - models
+    patch:
+      tags:
+      - models
+    delete:
+      tags:
+      - models
